@@ -489,9 +489,9 @@ add_set() {
         uci set firewall.@rule[-1]=rule
         uci set firewall.@rule[-1].src='lan'
         uci set firewall.@rule[-1].dest='*'		
-        uci set firewall.@rule[-1].name 'All lan through tun'
-        uci set firewall.@rule[-1].src_ip '192.168.0.0/16'
-        uci set firewall.@rule[-1].dest_ip '!192.168.0.0/16'
+        uci set firewall.@rule[-1].name='All lan through tun'
+        uci set firewall.@rule[-1].src_ip='192.168.0.0/16'
+        uci set firewall.@rule[-1].dest_ip='!192.168.0.0/16'
         uci set firewall.@rule[-1].target='MARK'
         uci set firewall.@rule[-1].set_mark='0x1'
 		uci set firewall.@rule[-1].family='ipv4'
