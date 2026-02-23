@@ -2,11 +2,6 @@
 
 #set -x
 
-check_repo() {
-    printf "\033[32;1mChecking OpenWrt repo availability...\033[0m\n"
-    opkg update | grep -q "Failed to download" && printf "\033[32;1mopkg failed. Check internet or date. Command for force ntp sync: ntpd -p ptbtime1.ptb.de\033[0m\n" && exit 1
-}
-
 route_vpn () {
     if [ "$TUNNEL" == wg ]; then
 cat << EOF > /etc/hotplug.d/iface/30-vpnroute
